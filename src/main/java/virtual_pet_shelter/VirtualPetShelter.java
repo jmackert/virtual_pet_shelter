@@ -14,13 +14,14 @@ public class VirtualPetShelter {
 		String name = input.next();
 		VirtualPet newPet = new VirtualPet(name);
 		shelter.add(newPet);
+		newPet.increaseTimePassed();
 	}
 
 	public void removePet() {
 		System.out.println("Enter the name of the pet you would like to adopt:");
-		String name = input.next();
+		String petToAdopt = input.next();
 		for (int i = shelter.size() - 1; i >= 0; i--) {
-			if (shelter.get(i).getNameOfPet().equals(name)) {
+			if (shelter.get(i).getNameOfPet().equals(petToAdopt)) {
 				shelter.remove(i);
 			}
 		}
@@ -33,4 +34,32 @@ public class VirtualPetShelter {
 		}
 	}
 
+	public void feedPets() {
+		for (VirtualPet pets : shelter) {
+			pets.decreaseHungerLevel();
+		}
+	}
+
+	public void waterPets() {
+		for(VirtualPet pets:shelter) {
+			pets.decreaseHungerLevel();
+		}
+	}
+	
+	public void playWithPet() {
+		System.out.println("Choose a pet would you like to play with:");
+		String petToPlayWith = input.next();
+		for (int i = shelter.size() - 1; i >= 0; i--) {
+			if (shelter.get(i).getNameOfPet().equals(petToPlayWith)) {
+
+			}
+		}
+
+	}
+
+	public void increaseTime() {
+		for(VirtualPet pets:shelter) {
+			pets.increaseTimePassed();
+		}
+	}
 }
