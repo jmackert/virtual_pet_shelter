@@ -54,6 +54,12 @@ public class VirtualPetShelterApp {
 		while (isRunning) {
 			myShelter.addPet();
 			myShelter.showShelter();
+			System.out.println("Would you like to sell a pet? y/n");
+			String sell = input.nextLine();
+			if(sell.equals("y")) {
+				myShelter.removePet();
+				myShelter.showShelter();
+			}
 			// displayInteractionMenu();
 		}
 
