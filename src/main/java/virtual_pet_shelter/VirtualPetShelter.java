@@ -11,8 +11,10 @@ public class VirtualPetShelter {
 
 	public void addPet() {
 		System.out.println("Enter Pet's name: ");
-		String name = input.next();
-		VirtualPet newPet = new VirtualPet(name);
+		String name = input.nextLine();
+		System.out.println("Enter a description for the pet: ");
+		String description = input.nextLine();
+		VirtualPet newPet = new VirtualPet(name, description);
 		shelter.add(newPet);
 		newPet.increaseTimePassed();
 	}
@@ -50,6 +52,7 @@ public class VirtualPetShelter {
 
 	public void playWithPet() {
 		System.out.println("Choose a pet would you like to play with:");
+		showPetDescriptions();
 		String petToPlayWith = input.next();
 			for (int i = shelter.size() - 1; i >= 0; i--) {
 				if (shelter.get(i).getNameOfPet().equals(petToPlayWith)) {
@@ -62,7 +65,12 @@ public class VirtualPetShelter {
 			}
 		}
 	
-
+	public void showPetDescriptions() {
+		for (VirtualPet pets : shelter) {
+			System.out.println("[ " + pets.getNameOfPet() + " ] " + pets.getDescriptionOfPet());
+		}
+	}
+	
 	public void increaseTime() {
 		for (VirtualPet pets : shelter) {
 			pets.increaseTimePassed();

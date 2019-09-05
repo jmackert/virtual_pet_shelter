@@ -2,20 +2,26 @@ package virtual_pet_shelter;
 
 public class VirtualPet {
 	String nameOfPet;
+	String descriptionOfPet;
 	int hungerLevel = 0;
 	int timePassed = 1;
 	int thirstLevel = 0;
 	int boredomLevel = 0;
 	int tirednessLevel = 0;
 
-	public VirtualPet(String name) {
+	public VirtualPet(String name, String description) {
 		this.nameOfPet = name;
+		this.descriptionOfPet = description;
 	}
 
 	public String getNameOfPet() {
 		return nameOfPet;
 	}
 
+	public String getDescriptionOfPet() {
+		return descriptionOfPet;
+	}
+	
 	public void increaseTimePassed() {
 		timePassed++;
 	}
