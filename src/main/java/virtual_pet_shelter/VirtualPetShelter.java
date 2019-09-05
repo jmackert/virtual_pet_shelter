@@ -37,28 +37,34 @@ public class VirtualPetShelter {
 	public void feedPets() {
 		for (VirtualPet pets : shelter) {
 			pets.decreaseHungerLevel();
+			System.out.println("You fed the pets.");
 		}
 	}
 
 	public void waterPets() {
-		for(VirtualPet pets:shelter) {
+		for (VirtualPet pets : shelter) {
 			pets.decreaseHungerLevel();
+			System.out.println("You gave the pets water.");
 		}
 	}
-	
+
 	public void playWithPet() {
 		System.out.println("Choose a pet would you like to play with:");
 		String petToPlayWith = input.next();
-		for (int i = shelter.size() - 1; i >= 0; i--) {
-			if (shelter.get(i).getNameOfPet().equals(petToPlayWith)) {
-
+			for (int i = shelter.size() - 1; i >= 0; i--) {
+				if (shelter.get(i).getNameOfPet().equals(petToPlayWith)) {
+					shelter.get(i).decreaseBoredomLevel();
+//					System.out.println("You played with " + petToPlayWith);
+				}
+				else {
+					System.out.println("That is an invalid pet.");
+				}
 			}
 		}
-
-	}
+	
 
 	public void increaseTime() {
-		for(VirtualPet pets:shelter) {
+		for (VirtualPet pets : shelter) {
 			pets.increaseTimePassed();
 		}
 	}
